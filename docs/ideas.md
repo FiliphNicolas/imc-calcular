@@ -15,14 +15,4 @@ Aplicaciones similares:
 - https://play.google.com/store/apps/details?id=com.appovo.bmicalculator&hl=es_CO 
 - https://play.google.com/store/apps/details?id=bmicalculator.bmi.calculator.weightlosstracker&hl=es_CO
 
-## Idea 2
-
-calculado basica app
-
-La idea principal es crear una calculadora básica en Android Studio utilizando Kotlin, que permita a los usuarios realizar operaciones matemáticas simples (suma, resta, multiplicación, división) y avanzadas (uso de paréntesis, punto decimal). Además, se incluye un botón de "borrar" (DEL) para eliminar el último carácter ingresado, lo que mejora la usabilidad.
-
-
-- Calculadora de Google
-- Calculadora Simple (Simple Calculator)
-- Calculadora Científica (HiPER Scientific Calculator)
 
