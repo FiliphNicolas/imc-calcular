@@ -14,9 +14,13 @@
     <string name="obesidad_ii">Obesidad II</string>
     <string name="obesidad_morbida">Obesidad III (Mórbida)</string>
     <string name="obesidad_extrema">Obesidad IV (Extrema)</string>
-    <string name="imc_result_format">Tu IMC es: %.2f</string>
+    <string name="imc_result_format">IMC: %.2f</string>
     <string name="category_format">Categoría: %s</string>
-    <string name="error_message">Error en el formato de los datos</string>
+    <string name="error_message">Por favor llene todos los campos</string>
     <string name="complete_fields_message">Por favor complete todos los campos</string>
+    <string name="positive_values_message">Los valores deben ser positivos</string>
+    <string name="invalid_weight_range">Peso debe estar entre 20-300 kg</string>
+    <string name="invalid_height_range">Altura debe estar entre 50-250 cm</string>
+    <string name="unexpected_error">Ocurrió un error inesperado</string>
 
 </resources>
