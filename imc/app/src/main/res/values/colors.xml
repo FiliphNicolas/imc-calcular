@@ -9,5 +9,7 @@
     <color name="obesidad_ii">#FF6500</color>
     <color name="obesidad_iii">#FF4600</color>
     <color name="obesidad_iv">#FF0000</color>
-    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimary">#3400BE</color>
+    <color name="colorPrimaryDark">#2300D9</color>
+    <color name="gray_900">#FF1F1F1F</color>
 </resources>

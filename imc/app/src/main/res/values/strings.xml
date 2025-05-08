@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">IMC calcular</string>
+    <string name="imc_image_description">Icono de calculadora de IMC</string>
+    <string name="title">Calculadora de IMC</string>
+    <string name="weight">Peso (kg)</string>
+    <string name="height">Altura (cm)</string>
+    <string name="button_calculate">Calcular IMC</string>
+    <string name="imc">IMC: </string>
+    <string name="category">Categoría: </string>
+    <string name="desnutricion">Desnutrición</string>
+    <string name="peso_ideal">Peso Ideal</string>
+    <string name="sobrepeso">Sobrepeso</string>
+    <string name="obesidad_i">Obesidad I</string>
+    <string name="obesidad_ii">Obesidad II</string>
+    <string name="obesidad_morbida">Obesidad III (Mórbida)</string>
+    <string name="obesidad_extrema">Obesidad IV (Extrema)</string>
+    <string name="imc_result_format">Tu IMC es: %.2f</string>
+    <string name="category_format">Categoría: %s</string>
+    <string name="error_message">Error en el formato de los datos</string>
+    <string name="complete_fields_message">Por favor complete todos los campos</string>
+
 </resources>

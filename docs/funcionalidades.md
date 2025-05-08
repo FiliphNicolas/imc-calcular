@@ -12,9 +12,9 @@
 - Se usa la fórmula: `IMC = peso / (altura * altura)`.
 
 ### Clasificación del IMC
-- El resultado se compara con la tabla de categorías:
-  - Desnutrición
-  - Peso Ideal
+- El resultado se compara con la tabla de categorías de imc:
+  - Desnutrición 18 omenos
+  - Peso Ideal 
   - Sobrepeso
   - Obesidad I
   - Obesidad II
@@ -30,40 +30,23 @@
 - **EditText**: Para entrada de datos.
 - **Button**: Para calcular.
 - **TextView**: Para mostrar el resultado y la categoría.
+# Aplicación de Cálculo de IMC - Documentación Técnica
 
----
+## 📱 Funcionalidades Principales
 
-## 2. Calculadora Básica
+### 1. Calculadora de IMC
 
-### Interfaz de Usuario (UI)
-- **TextView**: Muestra la entrada del usuario y el resultado.
-- **Botones**: Organizados en un `GridLayout` para simular una calculadora física.
-  - Números (0-9).
-  - Operadores (+, -, *, /).
-  - Paréntesis ((), ).
-  - Punto decimal (.).
-  - Botón de igual (`=`) para calcular el resultado.
-  - Botón de borrar (`DEL`) para eliminar el último carácter.
-  - Botón de limpiar (`C`) para reiniciar la calculadora.
+#### 📊 Entrada de Datos
+- **Peso**: 
+  - Unidad: kilogramos (kg)
+  - Campo: `TextInputEditText` con validación numérica
+- **Altura**: 
+  - Unidad: centímetros (cm)
+  - Conversión automática a metros (m)
 
-### Lógica de la Calculadora
-
-#### Entrada del Usuario
-- Cuando el usuario presiona un botón, el texto correspondiente se agrega al `TextView`.
-- Se manejan casos especiales:
-  - Evitar múltiples puntos decimales en un número.
-  - Agregar operadores después de números.
-
-#### Cálculo del Resultado
-- Cuando el usuario presiona el botón `=`, la expresión ingresada en el `TextView` se evalúa.
-- Se utiliza una función `eval` personalizada para analizar y calcular la expresión matemática.
-
-#### Borrado de Caracteres
-- El botón `DEL` elimina el último carácter del `TextView`.
-- Si no quedan caracteres, el `TextView` muestra `"0"`.
-
-#### Limpieza
-- El botón `C` reinicia la calculadora, estableciendo el `TextView` en `"0"`.
-
-#### Manejo de Errores
-- Si la expresión ingresada no es válida (por ejemplo, división por cero o paréntesis desbalanceados), se muestra `"Error"` en el `TextView`.
+#### 🧮 Algoritmo de Cálculo
+```kotlin
+fun calcularIMC(peso: Float, alturaCm: Float): Float {
+    val alturaMetros = alturaCm / 100
+    return peso / (alturaMetros * alturaMetros)
+}

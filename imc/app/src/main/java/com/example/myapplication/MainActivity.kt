@@ -6,6 +6,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnCalculate: Button
     private lateinit var tvResult: TextView
     private lateinit var tvCategory: TextView
-    private var defaultCategoryTextColor: Int = 0 // Variable para almacenar el color de texto por defecto de la categoría
+    private var defaultCategoryTextColor: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,50 +27,42 @@ class MainActivity : AppCompatActivity() {
         tvResult = findViewById(R.id.tvResult)
         tvCategory = findViewById(R.id.tvCategory)
 
-        // Obtener el color de texto por defecto de la categoría al inicio
         defaultCategoryTextColor = tvCategory.currentTextColor
 
         btnCalculate.setOnClickListener {
             val sWeight = etWeight.text.toString()
             val sHeight = etHeight.text.toString()
 
-            // Restablecer el color de texto de la categoría por defecto al hacer clic en el botón
             tvCategory.setTextColor(defaultCategoryTextColor)
 
             if (sWeight.isNotEmpty() && sHeight.isNotEmpty()) {
                 try {
                     val weight = sWeight.toFloat()
-                    val height = sHeight.toFloat() / 100  // Convertir cm a metros
-                    val imc = weight / (height * height) // Cálculo del IMC
+                    val height = sHeight.toFloat() / 100
+                    val imc = weight / (height * height)
 
-                    // Clasificar el IMC usando "when"
                     val categoryResult: Pair<Int, String> = when {
-                        imc < 18.5 -> Pair(ContextCompat.getColor(this, R.color.desnutricion), "Desnutrición")
-                        imc < 25 -> Pair(ContextCompat.getColor(this, R.color.peso_ideal), "Peso Ideal")
-                        imc < 30 -> Pair(ContextCompat.getColor(this, R.color.sobrepeso), "Sobrepeso")
-                        imc < 35 -> Pair(ContextCompat.getColor(this, R.color.obesidad_i), "Obesidad I")
-                        imc < 40 -> Pair(ContextCompat.getColor(this, R.color.obesidad_ii), "Obesidad II")
-                        imc < 50 -> Pair(ContextCompat.getColor(this, R.color.obesidad_iii), "Obesidad III (Mórbida)")
-                        else -> Pair(ContextCompat.getColor(this, R.color.obesidad_iv), "Obesidad IV (Extrema)") // Manejar IMC fuera de rango
+                        imc < 18.5 -> Pair(ContextCompat.getColor(this, R.color.desnutricion), getString(R.string.desnutricion))
+                        imc < 25 -> Pair(ContextCompat.getColor(this, R.color.peso_ideal), getString(R.string.peso_ideal))
+                        imc < 30 -> Pair(ContextCompat.getColor(this, R.color.sobrepeso), getString(R.string.sobrepeso))
+                        imc < 35 -> Pair(ContextCompat.getColor(this, R.color.obesidad_i), getString(R.string.obesidad_i))
+                        imc < 40 -> Pair(ContextCompat.getColor(this, R.color.obesidad_ii), getString(R.string.obesidad_ii))
+                        imc < 50 -> Pair(ContextCompat.getColor(this, R.color.obesidad_iii), getString(R.string.obesidad_morbida))
+                        else -> Pair(ContextCompat.getColor(this, R.color.obesidad_iv), getString(R.string.obesidad_extrema))
                     }
-                    // Mostrar el resultado
-                    tvResult.text = String.format("Tu IMC es: %.2f", imc)
-                    tvCategory.text = "Categoría: ${categoryResult.second}"
 
-                    // Aplicar el color al texto de la categoría
+                    tvResult.text = String.format(Locale.getDefault(), getString(R.string.imc_result_format), imc)
+                    tvCategory.text = getString(R.string.category_format, categoryResult.second)
+
                     tvCategory.setTextColor(categoryResult.first)
 
                 } catch (e: NumberFormatException) {
-                    // Manejar errores de formato
-                    tvResult.text = "Introduce valores válidos."
+                    tvResult.text = getString(R.string.error_message)
                     tvCategory.text = ""
-                    // No es necesario restablecer el color aquí, ya que no se aplicó un color específico
                 }
             } else {
-                // Mostrar mensaje de error si los campos están vacíos
-                tvResult.text = "Completa ambos campos."
+                tvResult.text = getString(R.string.complete_fields_message)
                 tvCategory.text = ""
-                // No es necesario restablecer el color aquí
             }
         }
     }
