@@ -4,8 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="desnutricion">#1ED565</color>
     <color name="peso_ideal">#88FF00</color>
-    <color name="sobrepeso">#FFED00</color>
-    <color name="obesidad_i">#FFAB00</color>
+    <color name="sobrepeso">#FFED34</color>
+    <color name="obesidad_i">#FF9A00</color>
     <color name="obesidad_ii">#FF6500</color>
     <color name="obesidad_iii">#FF4600</color>
     <color name="obesidad_iv">#FF0000</color>

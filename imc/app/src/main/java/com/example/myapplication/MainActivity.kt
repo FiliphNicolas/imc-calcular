@@ -13,7 +13,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var etHeight: EditText
     private lateinit var btnCalculate: Button
     private lateinit var tvResult: TextView
+    private lateinit var tvResultNum: TextView
     private lateinit var tvCategory: TextView
+    private lateinit var tvCategoryClass: TextView
+    private lateinit var tvError: TextView
     private var defaultCategoryTextColor: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +32,10 @@ class MainActivity : AppCompatActivity() {
         etHeight = findViewById(R.id.etHeight)
         btnCalculate = findViewById(R.id.btnCalculate)
         tvResult = findViewById(R.id.tvResult)
+        tvResultNum = findViewById(R.id.tvResultNum)
         tvCategory = findViewById(R.id.tvCategory)
+        tvCategoryClass = findViewById(R.id.tvCategoryClass)
+        tvError= findViewById(R.id.tvError)
         defaultCategoryTextColor = tvCategory.currentTextColor
     }
 
@@ -40,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculateAndDisplayIMC() {
-        tvCategory.setTextColor(defaultCategoryTextColor)
+        tvCategoryClass.setTextColor(defaultCategoryTextColor)
 
         try {
             val weight = etWeight.text.toString().toFloat()
@@ -95,14 +101,16 @@ class MainActivity : AppCompatActivity() {
             imc < 50 -> Pair(R.color.obesidad_iii, R.string.obesidad_morbida)
             else -> Pair(R.color.obesidad_iv, R.string.obesidad_extrema)
         }
-        tvResult.text = getString(R.string.imc_result_format, imc)
-        tvCategory.text = getString(R.string.category_format, getString(categoryRes))
-        tvCategory.setTextColor(ContextCompat.getColor(this, colorRes))
+        tvResultNum.text = getString(R.string.imc_result_format,imc)
+        tvCategoryClass.text = getString(categoryRes)
+        tvError.text= ""
+        tvCategoryClass.setTextColor(ContextCompat.getColor(this, colorRes))
     }
 
     private fun showError(message: String) {
-        tvResult.text = message
-        tvCategory.text = ""
-        tvCategory.setTextColor(defaultCategoryTextColor)
+        tvError.text = message
+        tvResultNum.text = ""
+        tvCategoryClass.text = ""
+        tvCategoryClass.setTextColor(defaultCategoryTextColor)
     }
 }
