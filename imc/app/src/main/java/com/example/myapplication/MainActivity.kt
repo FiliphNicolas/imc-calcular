@@ -18,11 +18,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvCategoryClass: TextView
     private lateinit var tvError: TextView
     private var defaultCategoryTextColor: Int = 0
+    private lateinit var imcHistoryDatabase: IMCHistoryDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        imcHistoryDatabase = IMCHistoryDatabase(this)
         initViews()
         setupCalculateButton()
     }
@@ -35,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         tvResultNum = findViewById(R.id.tvResultNum)
         tvCategory = findViewById(R.id.tvCategory)
         tvCategoryClass = findViewById(R.id.tvCategoryClass)
-        tvError= findViewById(R.id.tvError)
+        tvError = findViewById(R.id.tvError)
         defaultCategoryTextColor = tvCategory.currentTextColor
     }
 
@@ -101,9 +103,19 @@ class MainActivity : AppCompatActivity() {
             imc < 50 -> Pair(R.color.obesidad_iii, R.string.obesidad_morbida)
             else -> Pair(R.color.obesidad_iv, R.string.obesidad_extrema)
         }
-        tvResultNum.text = getString(R.string.imc_result_format,imc)
+
+        // Guardar en el historial
+        val category = getString(categoryRes)
+        imcHistoryDatabase.addHistory(
+            etWeight.text.toString().toFloat(),
+            etHeight.text.toString().toFloat(),
+            imc,
+            category
+        )
+
+        tvResultNum.text = getString(R.string.imc_result_format, imc)
         tvCategoryClass.text = getString(categoryRes)
-        tvError.text= ""
+        tvError.text = ""
         tvCategoryClass.setTextColor(ContextCompat.getColor(this, colorRes))
     }
 
@@ -112,5 +124,20 @@ class MainActivity : AppCompatActivity() {
         tvResultNum.text = ""
         tvCategoryClass.text = ""
         tvCategoryClass.setTextColor(defaultCategoryTextColor)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_history -> {
+                startActivity(Intent(this, HistoryActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
