@@ -1,6 +1,8 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.database.Cursor
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class HistoryAdapter(
     private val context: Context,
-    private val cursor: Cursor
+    private var cursor: Cursor
 ) : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 
     class HistoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -25,6 +27,7 @@ class HistoryAdapter(
         return HistoryViewHolder(view)
     }
 
+    @SuppressLint("SetTextI18n", "Range")
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
         cursor.moveToPosition(position)
         
@@ -37,6 +40,7 @@ class HistoryAdapter(
 
     override fun getItemCount(): Int = cursor.count
 
+    @SuppressLint("NotifyDataSetChanged")
     fun swapCursor(newCursor: Cursor) {
         cursor.close()
         cursor = newCursor

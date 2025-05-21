@@ -29,4 +29,11 @@
     <string name="yes">Sí</string>
     <string name="no">No</string>
     <string name="history">Historial</string>
+    <string name="calcular_imc">Calcular IMC</string>
+    <string name="fitness">Fitness</string>
+    <string name="ejercicios">Ejercicios</string>
+    <string name="dieta">Dieta</string>
+    <string name="objetivos">Objetivos</string>
+    <string name="configuraci_n">Configuración</string>
+    <string name="acerca_de">Acerca de</string>
 </resources>

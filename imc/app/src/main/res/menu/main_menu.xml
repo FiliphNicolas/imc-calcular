@@ -1,59 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_calculate_imc"
-        android:title="Calcular IMC"
-        android:icon="@android:drawable/ic_menu_calculate"
+        android:title="@string/calcular_imc"
         android:orderInCategory="100"
-        android:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_history"
         android:title="@string/history"
         android:orderInCategory="100"
-        android:showAsAction="never" />
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_fitness"
-        android:title="Fitness"
-        android:icon="@android:drawable/ic_menu_sports"
+        android:title="@string/fitness"
         android:orderInCategory="100"
-        android:showAsAction="ifRoom">
+        app:showAsAction="ifRoom">
         <menu>
             <item
                 android:id="@+id/action_exercises"
-                android:title="Ejercicios"
-                android:icon="@android:drawable/ic_menu_exercise"
+                android:title="@string/ejercicios"
                 android:orderInCategory="100"
-                android:showAsAction="never" />
+                app:showAsAction="never" />
 
             <item
                 android:id="@+id/action_diet"
-                android:title="Dieta"
-                android:icon="@android:drawable/ic_menu_food"
+                android:title="@string/dieta"
                 android:orderInCategory="100"
-                android:showAsAction="never" />
+                app:showAsAction="never" />
 
             <item
                 android:id="@+id/action_goal"
-                android:title="Objetivos"
-                android:icon="@android:drawable/ic_menu_goal"
+                android:title="@string/objetivos"
                 android:orderInCategory="100"
-                android:showAsAction="never" />
+                app:showAsAction="never" />
         </menu>
     </item>
 
     <item
         android:id="@+id/action_settings"
-        android:title="Configuración"
+        android:title="@string/configuraci_n"
         android:icon="@android:drawable/ic_menu_preferences"
         android:orderInCategory="100"
-        android:showAsAction="never" />
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_about"
-        android:title="Acerca de"
+        android:title="@string/acerca_de"
         android:icon="@android:drawable/ic_menu_info_details"
         android:orderInCategory="100"
-        android:showAsAction="never" />
+        app:showAsAction="never" />
 </menu>
