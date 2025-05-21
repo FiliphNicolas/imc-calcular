@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_calculate_imc"
+        android:title="Calcular IMC"
+        android:icon="@android:drawable/ic_menu_calculate"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_history"
+        android:title="@string/history"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_fitness"
+        android:title="Fitness"
+        android:icon="@android:drawable/ic_menu_sports"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/action_exercises"
+                android:title="Ejercicios"
+                android:icon="@android:drawable/ic_menu_exercise"
+                android:orderInCategory="100"
+                android:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_diet"
+                android:title="Dieta"
+                android:icon="@android:drawable/ic_menu_food"
+                android:orderInCategory="100"
+                android:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_goal"
+                android:title="Objetivos"
+                android:icon="@android:drawable/ic_menu_goal"
+                android:orderInCategory="100"
+                android:showAsAction="never" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="Configuración"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:title="Acerca de"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+</menu>
