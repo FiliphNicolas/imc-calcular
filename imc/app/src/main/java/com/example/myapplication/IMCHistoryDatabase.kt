@@ -48,11 +48,10 @@ class IMCHistoryDatabase(context: Context) : SQLiteOpenHelper(context, DATABASE_
             put(COLUMN_HEIGHT, height)
             put(COLUMN_IMC, imc)
             put(COLUMN_CATEGORY, category)
-            put(COLUMN_DATE, SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(
-                Date()
+            put(COLUMN_DATE, SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date()
             ))
         }
-        
+
         db.insert(TABLE_HISTORY, null, values)
     }
 

@@ -1,14 +1,17 @@
 package com.example.myapplication
-
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import android.util.Log
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvError: TextView
     private var defaultCategoryTextColor: Int = 0
     private lateinit var imcHistoryDatabase: IMCHistoryDatabase
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -107,7 +112,7 @@ class MainActivity : AppCompatActivity() {
             else -> Pair(R.color.obesidad_iv, R.string.obesidad_extrema)
         }
 
-        // Guardar en el historial
+
         val category = getString(categoryRes)
         imcHistoryDatabase.addHistory(
             etWeight.text.toString().toFloat(),
@@ -129,15 +134,50 @@ class MainActivity : AppCompatActivity() {
         tvCategoryClass.setTextColor(defaultCategoryTextColor)
     }
 
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
+        Log.d("MainActivity", "onCreateOptionsMenu called") // Add this
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.action_calculate_imc -> {
+                // Handle "Calculate IMC" action
+                // Example: navigate to another screen or perform a calculation
+                Toast.makeText(this, "Calculate IMC selected", Toast.LENGTH_SHORT).show()
+                true
+            }
             R.id.action_history -> {
-                startActivity(Intent(this, HistoryActivity::class.java))
+                // Handle "History" action
+                Toast.makeText(this, "History selected", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.action_exercises -> {
+                // Handle "Exercises" action (from Fitness submenu)
+                Toast.makeText(this, "Exercises selected", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.action_diet -> {
+                // Handle "Diet" action (from Fitness submenu)
+                Toast.makeText(this, "Diet selected", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.action_goal -> {
+                // Handle "Goal" action (from Fitness submenu)
+                Toast.makeText(this, "Goal selected", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.action_settings -> {
+                // Handle "Settings" action
+                Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.action_about -> {
+                // Handle "About" action
+                Toast.makeText(this, "About selected", Toast.LENGTH_SHORT).show()
                 true
             }
             else -> super.onOptionsItemSelected(item)

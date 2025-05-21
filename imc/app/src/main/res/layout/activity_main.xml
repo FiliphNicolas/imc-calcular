@@ -28,15 +28,15 @@
     <!-- Mensaje informativo sobre IMC -->
     <TextView
         android:id="@+id/tvImcInfo"
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:text="@string/imc_info"
         android:textAlignment="center"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textColor="?attr/colorOnSurfaceVariant"
         android:layout_marginBottom="16dp"
         android:linksClickable="true"
-        android:autoLink="web"/> <!-- Assuming you fixed autolink to autoLink -->
+        android:autoLink="web"/>
 
     <!-- Imagen -->
     <ImageView
