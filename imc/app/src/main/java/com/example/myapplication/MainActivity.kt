@@ -1,16 +1,14 @@
 package com.example.myapplication
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import android.util.Log
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvError: TextView
     private var defaultCategoryTextColor: Int = 0
     private lateinit var imcHistoryDatabase: IMCHistoryDatabase
+
 
 
 
@@ -101,19 +100,11 @@ class MainActivity : AppCompatActivity() {
         return weight / (heightMeters * heightMeters)
     }
 
+    @SuppressLint("DefaultLocale")
     private fun displayResults(imc: Float) {
-        val (colorRes, categoryRes) = when {
-            imc < 18.5 -> Pair(R.color.desnutricion, R.string.desnutricion)
-            imc < 25 -> Pair(R.color.peso_ideal, R.string.peso_ideal)
-            imc < 30 -> Pair(R.color.sobrepeso, R.string.sobrepeso)
-            imc < 35 -> Pair(R.color.obesidad_i, R.string.obesidad_i)
-            imc < 40 -> Pair(R.color.obesidad_ii, R.string.obesidad_ii)
-            imc < 50 -> Pair(R.color.obesidad_iii, R.string.obesidad_morbida)
-            else -> Pair(R.color.obesidad_iv, R.string.obesidad_extrema)
-        }
+        val category = getIMCCategory(imc)
 
-
-        val category = getString(categoryRes)
+        // Save to history
         imcHistoryDatabase.addHistory(
             etWeight.text.toString().toFloat(),
             etHeight.text.toString().toFloat(),
@@ -121,10 +112,34 @@ class MainActivity : AppCompatActivity() {
             category
         )
 
-        tvResultNum.text = getString(R.string.imc_result_format, imc)
-        tvCategoryClass.text = getString(categoryRes)
+        tvResultNum.text = String.format("%.2f", imc)
+        tvCategoryClass.text = category
         tvError.text = ""
-        tvCategoryClass.setTextColor(ContextCompat.getColor(this, colorRes))
+        tvCategoryClass.setTextColor(ContextCompat.getColor(this, getColorForCategory(category)))
+    }
+
+    private fun getIMCCategory(imc: Float): String {
+        return when {
+            imc < 18.5 -> getString(R.string.desnutricion)
+            imc < 25 -> getString(R.string.peso_ideal)
+            imc < 30 -> getString(R.string.sobrepeso)
+            imc < 35 -> getString(R.string.obesidad_i)
+            imc < 40 -> getString(R.string.obesidad_ii)
+            imc < 50 -> getString(R.string.obesidad_morbida)
+            else -> getString(R.string.obesidad_extrema)
+        }
+    }
+
+    private fun getColorForCategory(category: String): Int {
+        return when (category) {
+            getString(R.string.desnutricion) -> R.color.desnutricion
+            getString(R.string.peso_ideal) -> R.color.peso_ideal
+            getString(R.string.sobrepeso) -> R.color.sobrepeso
+            getString(R.string.obesidad_i) -> R.color.obesidad_i
+            getString(R.string.obesidad_ii) -> R.color.obesidad_ii
+            getString(R.string.obesidad_morbida) -> R.color.obesidad_iii
+            else -> R.color.obesidad_iv
+        }
     }
 
     private fun showError(message: String) {
@@ -136,51 +151,30 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        Log.d("MainActivity", "onCreateOptionsMenu called") // Add this
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.main_menu, menu)
+        menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_calculate_imc -> {
-                // Handle "Calculate IMC" action
-                // Example: navigate to another screen or perform a calculation
-                Toast.makeText(this, "Calculate IMC selected", Toast.LENGTH_SHORT).show()
-                true
-            }
             R.id.action_history -> {
-                // Handle "History" action
-                Toast.makeText(this, "History selected", Toast.LENGTH_SHORT).show()
-                true
-            }
-            R.id.action_exercises -> {
-                // Handle "Exercises" action (from Fitness submenu)
-                Toast.makeText(this, "Exercises selected", Toast.LENGTH_SHORT).show()
-                true
-            }
-            R.id.action_diet -> {
-                // Handle "Diet" action (from Fitness submenu)
-                Toast.makeText(this, "Diet selected", Toast.LENGTH_SHORT).show()
-                true
-            }
-            R.id.action_goal -> {
-                // Handle "Goal" action (from Fitness submenu)
-                Toast.makeText(this, "Goal selected", Toast.LENGTH_SHORT).show()
-                true
-            }
-            R.id.action_settings -> {
-                // Handle "Settings" action
-                Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, HistoryActivity::class.java))
                 true
             }
             R.id.action_about -> {
-                // Handle "About" action
-                Toast.makeText(this, "About selected", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, AboutActivity::class.java))
+                true
+            }
+            R.id.action_exercises ->{
+                startActivity(Intent(this, ExercisesActivity::class.java))
+                true
+            }
+            R.id.action_diet -> {
+                startActivity(Intent(this, DietActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
+
 }

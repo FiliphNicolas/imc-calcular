@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" <!-- Important: Namespace for custom attributes -->
+    android:layout_width="match_parent"android:layout_height="match_parent"android:gravity="center"android:orientation="vertical">
+
+<de.hdodenhof.circleimageview.CircleImageView android:id="@+id/profile_image" android:layout_width="96dp"
+android:layout_height="96dp" android:src="@drawable/my_profile_pic" app:civ_border_width="2dp"
+app:civ_border_color="#FF000000" /> <!-- Example: Black border -->
+
+<de.hdodenhof.circleimageview.CircleImageView android:id="@+id/another_image" android:layout_width="150dp"
+android:layout_height="150dp" android:layout_marginTop="20dp" android:src="@mipmap/ic_launcher"
+app:civ_border_width="4dp" app:civ_border_color="@color/colorPrimary"
+app:civ_circle_background_color="@color/light_gray" /> <!-- Optional: Background color for the circle itself -->
+
+    </LinearLayout>

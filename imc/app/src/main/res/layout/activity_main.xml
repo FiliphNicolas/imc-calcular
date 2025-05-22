@@ -4,31 +4,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"> <!-- Important for some child layout behaviors -->
+    android:fillViewport="true"
+    android:gravity="center"> <!-- Important for some child layout behaviors -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="24dp"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:gravity="center">
 
-    <!-- Título -->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title"
-        android:textAlignment="center"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"
-        android:textColor="?attr/colorOnBackground"/>
 
     <!-- Mensaje informativo sobre IMC -->
     <TextView
         android:id="@+id/tvImcInfo"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/imc_info"
         android:textAlignment="center"
@@ -52,7 +43,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/weightInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/weight"
         app:boxStrokeColor="?attr/colorPrimary"
@@ -72,7 +63,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/heightInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="@string/height"
@@ -96,17 +87,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
-        android:backgroundTint="?attr/colorButtonNormal"
+        android:backgroundTint="@color/colorPrimary"
         android:paddingHorizontal="32dp"
         android:paddingVertical="12dp"
         android:text="@string/button_calculate"
-        android:textColor="?attr/colorOnPrimary"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:cornerRadius="12dp"/>
 
     <GridLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="start">
 
         <TextView
             android:id="@+id/tvResult"
@@ -133,7 +125,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:gravity="center">
+        android:layout_gravity="start">
 
         <TextView
             android:id="@+id/tvCategory"

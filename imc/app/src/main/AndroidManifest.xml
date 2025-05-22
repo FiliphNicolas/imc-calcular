@@ -3,25 +3,56 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/imc_icon"
         android:label="@string/app_name"
         android:roundIcon="@drawable/imc_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
-        tools:targetApi="31">
+        tools:targetApi="34">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.MyApplication">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ExercisesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="@string/app_name" />
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".GoalsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".DietActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="@string/app_name" />
         </activity>
     </application>
 

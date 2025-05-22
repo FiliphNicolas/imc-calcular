@@ -2,14 +2,37 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="desnutricion">#97D593</color>
-    <color name="peso_ideal">#00FF00</color>
-    <color name="sobrepeso">#FFED34</color>
-    <color name="obesidad_i">#FF9A00</color>
-    <color name="obesidad_ii">#FF6500</color>
-    <color name="obesidad_iii">#FF4600</color>
-    <color name="obesidad_iv">#FF0000</color>
-    <color name="colorPrimary">#3700BE</color>
-    <color name="colorPrimaryDark">#6533DE</color>
+    <color name="desnutricion">#FF97D593</color>
+    <color name="peso_ideal">#FF00FF00</color>
+    <color name="sobrepeso">#FFFFED34</color>
+    <color name="obesidad_i">#FFFF9A00</color>
+    <color name="obesidad_ii">#FFFF6500</color>
+    <color name="obesidad_iii">#FFFF4600</color>
+    <color name="obesidad_iv">#FFFF0000</color>
+    <color name="colorPrimary">#FF3700BE</color>
+    <color name="colorPrimaryDark">#FF6533DE</color>
     <color name="gray_900">#FF1F1F1F</color>
+    <color name="colorError">#B00020</color>
+
+    <!-- Dark Theme Specific Colors (New or Overridden) -->
+    <!-- You might reuse some light theme color names if their values are appropriate, -->
+    <!-- or define entirely new ones. -->
+
+    <color name="colorPrimaryNight">#BB86FC</color> <!-- Example: Lighter purple for dark theme -->
+    <color name="colorPrimaryVariantNight">#3700B3</color> <!-- Could be same as light's primaryDark or different -->
+    <color name="colorSecondary">#018786</color>
+    <color name="colorSecondaryNight">#03DAC5</color> <!-- Example: Teal accent for dark theme -->
+
+    <color name="surface_dark">#121212</color> <!-- Common dark surface color -->
+    <color name="on_surface_dark">#E0E0E0</color> <!-- Light gray for text on dark surface -->
+
+    <color name="background_dark">#1F1F1F</color> <!-- Slightly different dark background -->
+    <color name="on_background_dark">#FFFFFF</color> <!-- White text on dark background -->
+
+    <color name="colorErrorNight">#CF6679</color>
+
+    <!-- Your Accent Colors -->
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccentDark">#018786</color>
+
 </resources>

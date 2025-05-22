@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">IMC calcular</string>
     <string name="imc_image_description">Icono de calculadora de IMC</string>
     <string name="title">Calculadora de IMC</string>
     <string name="weight">Peso (kg)</string>
@@ -21,8 +20,17 @@
     <string name="positive_values_message">Los valores deben ser positivos</string>
     <string name="invalid_weight_range">Peso debe estar entre 20 a 300 kg</string>
     <string name="invalid_height_range">Altura debe estar entre 50 a 250 cm</string>
+    <string name="dietactivity">Dieta</string>
+    <string name="goalactivity">Objetivos</string>
+    <string name="imc_category_1">Desnutrición</string>
+    <string name="imc_category_2">Peso Ideal</string>
+    <string name="imc_category_3">Sobrepeso</string>
+    <string name="imc_category_4">Obesidad I</string>
+    <string name="imc_category_5">Obesidad II</string>
+    <string name="imc_category_6">Obesidad III (Mórbida)</string>
+    <string name="imc_category_7">Obesidad IV (Extrema)</string>
     <string name="unexpected_error">Ocurrió un error inesperado</string>
-    <string name="imc_info">El IMC es una herramienta de detección inicial que relaciona peso y altura. No diagnostica grasa corporal ni salud. No es adecuado para atletas, embarazadas, niños o ancianos. Los resultados deben ser evaluados por un profesional médico. Para más información, consulta: https://www.minsalud.gov.co</string>
+    <string name="imc_info">El IMC es una herramienta de detección inicial que relaciona peso y altura. No diagnostica grasa corporal ni salud. No es adecuado para atletas, embarazadas, niños o ancianos. Los resultados deben ser evaluados por un profesional médico.Para más información, consulta: \nhttps://www.minsalud.gov.co</string>
     <string name="history_title">Historial de Cálculos</string>
     <string name="clear_history">Limpiar Historial</string>
     <string name="clear_history_confirmation">¿Está seguro que desea limpiar el historial? Esta acción no se puede deshacer.</string>
@@ -33,7 +41,8 @@
     <string name="fitness">Fitness</string>
     <string name="ejercicios">Ejercicios</string>
     <string name="dieta">Dieta</string>
-    <string name="objetivos">Objetivos</string>
     <string name="configuraci_n">Configuración</string>
     <string name="acerca_de">Acerca de</string>
+    <string name="app_name">Calcular IMC</string>
+    <string name="ejercicioactivity">Ejercicios</string>
 </resources>
