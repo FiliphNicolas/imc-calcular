@@ -1,4 +1,5 @@
 package com.example.myapplication
+
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +10,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,16 +22,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvCategoryClass: TextView
     private lateinit var tvError: TextView
     private var defaultCategoryTextColor: Int = 0
-    private lateinit var imcHistoryDatabase: IMCHistoryDatabase
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        imcHistoryDatabase = IMCHistoryDatabase(this)
         initViews()
         setupCalculateButton()
     }
@@ -54,24 +49,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun calculateAndDisplayIMC() {
-        tvCategoryClass.setTextColor(defaultCategoryTextColor)
-
-        try {
-            val weight = etWeight.text.toString().toFloat()
-            val height = etHeight.text.toString().toFloat()
-
-            if (!validateInputs(weight, height)) return
-
-            val imc = calculateIMC(weight, height)
-            displayResults(imc)
-
-        } catch (e: NumberFormatException) {
-            showError(getString(R.string.error_message))
-        } catch (e: Exception) {
-            showError(getString(R.string.unexpected_error))
-        }
-    }
 
     private fun validateInputs(weight: Float, height: Float): Boolean {
         return when {
@@ -94,7 +71,24 @@ class MainActivity : AppCompatActivity() {
             else -> true
         }
     }
+    private fun calculateAndDisplayIMC() {
+        tvCategoryClass.setTextColor(defaultCategoryTextColor)
 
+        try {
+            val weight = etWeight.text.toString().toFloat()
+            val height = etHeight.text.toString().toFloat()
+
+            if (!validateInputs(weight, height)) return
+
+            val imc = calculateIMC(weight, height)
+            displayResults(imc)
+
+        } catch (e: NumberFormatException) {
+            showError(getString(R.string.error_message))
+        } catch (e: Exception) {
+            showError(getString(R.string.unexpected_error))
+        }
+    }
     private fun calculateIMC(weight: Float, heightCm: Float): Float {
         val heightMeters = heightCm / 100
         return weight / (heightMeters * heightMeters)
@@ -103,14 +97,6 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("DefaultLocale")
     private fun displayResults(imc: Float) {
         val category = getIMCCategory(imc)
-
-        // Save to history
-        imcHistoryDatabase.addHistory(
-            etWeight.text.toString().toFloat(),
-            etHeight.text.toString().toFloat(),
-            imc,
-            category
-        )
 
         tvResultNum.text = String.format("%.2f", imc)
         tvCategoryClass.text = category
@@ -149,7 +135,6 @@ class MainActivity : AppCompatActivity() {
         tvCategoryClass.setTextColor(defaultCategoryTextColor)
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
@@ -157,15 +142,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_history -> {
-                startActivity(Intent(this, HistoryActivity::class.java))
-                true
-            }
             R.id.action_about -> {
                 startActivity(Intent(this, AboutActivity::class.java))
                 true
             }
-            R.id.action_exercises ->{
+            R.id.action_exercises -> {
                 startActivity(Intent(this, ExercisesActivity::class.java))
                 true
             }
@@ -176,5 +157,4 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 }

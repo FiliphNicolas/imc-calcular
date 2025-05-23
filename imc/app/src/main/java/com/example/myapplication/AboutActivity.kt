@@ -21,7 +21,7 @@ class AboutActivity : AppCompatActivity() {
         binding.tvVersion.text = "Versión 1.1"
         binding.tvDescription.text = "Calculadora de Índice de Masa Corporal (IMC) que ayuda a determinar si tu peso es saludable."
         binding.tvDeveloper.text = "Desarrollado por: Filiph Nicolas"
-        binding.tvEmail.text = "filiph.nicolas@gmail.com"
+        binding.tvEmail.text = "fsuan62@uan.edu.co"
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

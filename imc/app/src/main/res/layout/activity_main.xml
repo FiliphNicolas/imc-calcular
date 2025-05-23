@@ -4,16 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:gravity="center"> <!-- Important for some child layout behaviors -->
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp"
+        android:layout_marginTop="12dp"
         android:orientation="vertical"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center">
+        android:gravity="center_horizontal">
 
 
     <!-- Mensaje informativo sobre IMC -->
@@ -27,7 +25,9 @@
         android:textColor="?attr/colorOnSurfaceVariant"
         android:layout_marginBottom="16dp"
         android:linksClickable="true"
-        android:autoLink="web"/>
+        android:autoLink="web"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"/>
 
     <!-- Imagen -->
     <ImageView
@@ -43,7 +43,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/weightInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="@string/weight"
         app:boxStrokeColor="?attr/colorPrimary"
@@ -63,7 +63,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/heightInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="@string/height"
@@ -85,20 +85,18 @@
         android:id="@+id/btnCalculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:paddingHorizontal="32dp"
-        android:paddingVertical="12dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="18dp"
+        android:backgroundTint="?attr/colorPrimary"
         android:text="@string/button_calculate"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        app:cornerRadius="12dp"/>
+        android:textSize="20sp"/>
 
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="start">
+        android:layout_gravity="start"
+        android:layout_marginStart="12dp">
 
         <TextView
             android:id="@+id/tvResult"
@@ -125,7 +123,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_gravity="start">
+        android:layout_gravity="start"
+        android:layout_marginStart="12dp">
 
         <TextView
             android:id="@+id/tvCategory"
@@ -155,6 +154,6 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="?attr/colorOnBackground"/>
+        android:textColor="?attr/colorError"/>
 </LinearLayout>
     </ScrollView>

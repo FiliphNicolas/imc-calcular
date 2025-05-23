@@ -2,17 +2,18 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="desnutricion">#FF97D593</color>
-    <color name="peso_ideal">#FF00FF00</color>
-    <color name="sobrepeso">#FFFFED34</color>
-    <color name="obesidad_i">#FFFF9A00</color>
-    <color name="obesidad_ii">#FFFF6500</color>
-    <color name="obesidad_iii">#FFFF4600</color>
-    <color name="obesidad_iv">#FFFF0000</color>
+    <color name="desnutricion">#FF43A363</color>
+    <color name="peso_ideal">#FF00AF00</color>
+    <color name="sobrepeso">#FFFFFE00</color>
+    <color name="obesidad_i">#FFFFA700</color>
+    <color name="obesidad_ii">#FFFF7500</color>
+    <color name="obesidad_iii">#FFFF3100</color>
+    <color name="obesidad_iv">#FFEF0000</color>
     <color name="colorPrimary">#FF3700BE</color>
     <color name="colorPrimaryDark">#FF6533DE</color>
     <color name="gray_900">#FF1F1F1F</color>
-    <color name="colorError">#B00020</color>
+    <color name="colorError">#DA0000</color>
+    <color name="colorErrorDark">#f34060</color>
 
     <!-- Dark Theme Specific Colors (New or Overridden) -->
     <!-- You might reuse some light theme color names if their values are appropriate, -->
@@ -28,8 +29,6 @@
 
     <color name="background_dark">#1F1F1F</color> <!-- Slightly different dark background -->
     <color name="on_background_dark">#FFFFFF</color> <!-- White text on dark background -->
-
-    <color name="colorErrorNight">#CF6679</color>
 
     <!-- Your Accent Colors -->
     <color name="colorAccent">#03DAC5</color>

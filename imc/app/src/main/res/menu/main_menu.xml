@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
-    <item
-        android:id="@+id/action_calculate_imc"
-        android:title="@string/calcular_imc"
-        android:orderInCategory="100"
-        app:showAsAction="ifRoom" />
-
-
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/action_fitness"
@@ -18,17 +10,12 @@
         <menu>
             <item
                 android:id="@+id/action_exercises"
-                android:title="@string/ejercicios"
+                android:title="@string/ejercicioactivity"
                 android:orderInCategory="100"
                 app:showAsAction="never" />
             <item
                 android:id="@+id/action_diet"
-                android:title="@string/dieta"
-                android:orderInCategory="100"
-                app:showAsAction="never" />
-            <item
-                android:id="@+id/action_history"
-                android:title="@string/history"
+                android:title="@string/diet_activity"
                 android:orderInCategory="100"
                 app:showAsAction="never" />
         </menu>
