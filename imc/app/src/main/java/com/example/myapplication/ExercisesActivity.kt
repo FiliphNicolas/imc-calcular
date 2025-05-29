@@ -21,7 +21,10 @@ class ExercisesActivity : AppCompatActivity() {
             Exercise("Flexiones", "Ejercicio de pecho", R.drawable.flexiones),
             Exercise("Plancha", "Ejercicio de core", R.drawable.plancha),
             Exercise("Zancadas", "Ejercicio de piernas", R.drawable.zancadas),
-            Exercise("Abdominales","Ejercicio de abdomen", R.drawable.abdominales)
+            Exercise("Abdominales","Ejercicio de abdomen", R.drawable.abdominales),
+            Exercise("Remo", "Ejercicio de pecho", R.drawable.remo),
+            Exercise("Burpees", "Ejercicio de fuerza", R.drawable.burpees),
+            Exercise("Saltos", "Ejercicio de fuerza", R.drawable.saltos),
         )
     }
 }

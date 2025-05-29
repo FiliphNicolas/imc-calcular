@@ -35,4 +35,29 @@
     <string name="ejercicioactivity">Ejercicios</string>
     <string name="heigth_form">%.2f cm</string>
     <string name="weight_form">%.2f kg</string>
+    <string name="title_about">Acerca de</string>
+    <string name="app_name_label">IMC Calculator</string>
+    <string name="app_version">Versión 1.1</string>
+    <string name="developer">Desarrollado por: Filiph Nicolas</string>
+    <string name="email">fsuan62@uan.edu.co</string>
+
+    <string name="info_instrution">
+    &lt;b&gt;Calculadora de Índice de Masa Corporal (IMC)&lt;/b&gt;&lt;br/&gt;
+    Esta aplicación te ayuda a determinar si tu peso es saludable.&lt;br/&gt;&lt;br/&gt;
+
+    &lt;b&gt;Para calcular tu IMC:&lt;/b&gt;&lt;br/&gt;
+    1. Introduce tu peso en kilogramos (kg)&lt;br/&gt;
+    2. Introduce tu altura en metros (m)&lt;br/&gt;
+    3. El IMC se calcula como: peso / (altura²)&lt;br/&gt;&lt;br/&gt;
+
+    &lt;b&gt;Interpretación:&lt;/b&gt;&lt;br/&gt;
+    - Menos de 18.4: Desnutrición&lt;br/&gt;
+    - 18.5 - 24.9: Peso ideal&lt;br/&gt;
+    - 25 - 29.9: Sobrepeso&lt;br/&gt;
+    - 30 - 39.9: Obesidad I&lt;br/&gt;
+    - 40 - 49.9: Obesidad II&lt;br/&gt;
+    - 50 - 59.9: Obesidad III&lt;br/&gt;
+    - 60 o más: Obesidad IV
+    </string>
+
 </resources>

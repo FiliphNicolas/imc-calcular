@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.text.Html
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityAboutBinding
@@ -14,14 +15,10 @@ class AboutActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "Acerca de"
 
         // Set up the about content
-        binding.tvAppName.text = "IMC Calculator"
-        binding.tvVersion.text = "Versión 1.1"
-        binding.tvDescription.text = "Calculadora de Índice de Masa Corporal (IMC) que ayuda a determinar si tu peso es saludable."
-        binding.tvDeveloper.text = "Desarrollado por: Filiph Nicolas"
-        binding.tvEmail.text = "fsuan62@uan.edu.co"
+        supportActionBar?.title = getString(R.string.title_about)
+        binding.tvDescription.text = Html.fromHtml(getString(R.string.info_instrution), Html.FROM_HTML_MODE_LEGACY)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
