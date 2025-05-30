@@ -16,6 +16,16 @@
    - Validación de campos vacíos
    - Control de formatos numéricos
 
+4. **Se agrego la pestana de finess** 
+   - dieta
+   - ejercicio
+   - nutricionista
+
+5. **Se agrego la pestana de acerca de** 
+   - informacion del desarrollador
+   - informacion del proyecto
+   - informacion de la aplicacion
+
 
 Author: Filiph Nicolas Suan Yara
 

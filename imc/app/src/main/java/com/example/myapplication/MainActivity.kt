@@ -154,6 +154,20 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, DietActivity::class.java))
                 true
             }
+            R.id.action_nutritionist -> {
+                val imc = try {
+                    val weight = etWeight.text.toString().toFloat()
+                    val height = etHeight.text.toString().toFloat()
+                    calculateIMC(weight, height)
+                } catch (e: Exception) {
+                    0f
+                }
+                
+                val intent = Intent(this, NutritionistActivity::class.java)
+                intent.putExtra("IMC", imc)
+                startActivity(intent)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

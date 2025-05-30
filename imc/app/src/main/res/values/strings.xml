@@ -21,6 +21,7 @@
     <string name="invalid_weight_range">Peso debe estar entre 20 a 300 kg</string>
     <string name="invalid_height_range">Altura debe estar entre 50 a 250 cm</string>
     <string name="diet_activity">Dieta</string>
+    <string name="nutritionist_activity">Nutricionista</string>
     <string name="unexpected_error">Ocurrió un error inesperado</string>
     <string name="imc_info">El IMC es una herramienta de detección inicial que relaciona peso y altura. Para más información, consulta: \nhttps://www.minsalud.gov.co</string>
     <string name="history_title">Historial de Cálculos</string>
