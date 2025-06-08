@@ -1,4 +1,4 @@
-# Calcular imc
+# Fitness imc app
 
 -# 📝 Comentarios sobre la Aplicación de Cálculo de IMC
 

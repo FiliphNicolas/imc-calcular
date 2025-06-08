@@ -32,7 +32,7 @@
     <string name="calcular_imc">Calcular IMC</string>
     <string name="fitness">Fitness</string>
     <string name="acerca_de">Acerca de</string>
-    <string name="app_name">Calcular IMC</string>
+    <string name="app_name">Fitness imc app</string>
     <string name="ejercicioactivity">Ejercicios</string>
     <string name="heigth_form">%.2f cm</string>
     <string name="weight_form">%.2f kg</string>
